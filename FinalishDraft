@@ -4,14 +4,10 @@ public class Change {
     public static void main(String[] args) { 
     	Scanner in = new Scanner(System.in); //call scanner
            System.out.println("How many pennies would you like to exchange? "); //ask for positive integer as input
-           if (!in.hasNextInt()) { //check if it was something other than a positive integer
-            String nonsense = in.next(); //declare the input to be nonsense
-               System.err.println(nonsense + " isn't a number of pennies. Input a valid integer to continue. "); //Give error and restart
-        } //why does program terminate if the check fails twice? 
-		
-           while  (in.hasNextInt()) { //if input is positive integer, run the following statements to the end
+	   
+while  (in.hasNextInt()) { //if input is positive integer, run the following statements to the end
     int cents = in.nextInt();  //the positive integer is declared as cents
-​
+    
     int Q = cents / 25; //Declares Q (quarters) to be the number of times 25 can fit into the inital amount given
         if (Q == 1) { //if only one quarter, 
             System.out.print("1 Quarter\n"); // print singular of quarter
