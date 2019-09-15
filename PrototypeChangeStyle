@@ -1,0 +1,15 @@
+
+import java.util.Scanner;
+public class //put here
+	public static void main(String[] args) {
+	    Scanner in = new Scanner(System.in); 
+	    System.out.println("What number are we testing?");
+	    while (in.hasNextInt()) {
+	        if (in.nextInt() >= 1) {
+	            System.out.println("Just pretend this is the equation.");}
+	        else System.out.println("Want to try again? ");
+
+	        }
+	        System.out.println("Type a proper integer to continue, or a bunch of gobledygook to quit. ");
+	    }
+	}
