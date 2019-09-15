@@ -1,0 +1,55 @@
+
+package test;
+import java.util.Scanner;
+public class ClassChangeBones {
+    public static void main(String[] args) { 
+    	Scanner in = new Scanner(System.in); //call scanner
+           System.out.println("How many pennies would you like to exchange? "); //ask for positive integer as input
+           while (!in.hasNextInt()) { //check if it was something other than a positive integer
+            String nonsense = in.next(); //declare the input to be nonsense
+               System.err.println(nonsense + " isn't a number of pennies. Input a valid integer to continue. "); //Give error and restart
+        } //why does program terminate if the check fails twice? 
+		
+           while  (in.hasNextInt()) { //if input is positive integer, run the following statements to the end
+    int cents = in.nextInt();  //the positive integer is declared as cents
+    int Q = cents / 25; //Declares Q (quarters) to be the number of times 25 can fit into the inital amount given
+        if (Q == 1) { //if only one quarter, 
+            System.out.print("1 Quarter\n"); // print singular of quarter
+        }
+        if (Q >=2) { //if there's more than one quarter
+            System.out.print(Q + " Quarters\n"); // print plural "quarters"
+        }
+        
+        cents = cents % 25; //redeclare cents to be the amount left over after subtracting the quarters
+        int D = cents / 10; // declare D (dimes)
+        
+               if (D == 1) {
+            System.out.print("1 Dime\n");
+        }
+        if (D >=2) {
+            System.out.print(D + " Dimes\n");
+        }
+        
+        cents = cents % 10;
+        int N = cents / 5; //declares N (nickles)
+        
+               if (N == 1) {
+            System.out.print("1 Nickel\n");
+        }
+        if (N >=2) {
+            System.out.print(N + " Nickels\n");
+        }
+        
+        cents = cents % 5;
+        
+        if (cents ==1) {
+            System.out.print("1 Penny\n");}
+        if (cents >=2) {
+            System.out.print(cents + " Pennies\n");}
+			   
+        cents = 0; //redeclares cents to be 0 as no pennies are remaining
+        if (cents <= 0) { //if 0 pennies was the initial input, or if the code has run all the way to 0,
+        	System.out.print("Care to try another amount? ");} //ask for another integer input
+        }
+      }
+}
